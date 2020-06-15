@@ -37,9 +37,13 @@ Given the current repo of a sample node app, your objectives will be:
 - Create a Dockerfile for the backend part
 - Create 2 docker-compose files
 
-    one for local development with only the mongo database needed, named: docker-compose.yaml.dev 
+    one for local development with only the mongo database, named: docker-compose.yaml.dev 
 
     one for deployment in a standalone server named: docker-compose.yaml
+
+    Both should use persistent storage for the data
+
+- (Optional) Deploy the stack to a free tier cloud provider of your choice.
 
 - (Optional) Create a simple kubernetes deployment and service file for the backend 
 

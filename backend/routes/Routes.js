@@ -1,7 +1,7 @@
 const express = require('express');
 
 const app = express.Router();
-const repository = require('../respositories/TodoRepository');
+const repository = require('../repositories/TodoRepository');
 
 // get all todo items in the db
 app.get('/', (req, res) => {
