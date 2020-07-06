@@ -1,0 +1,40 @@
+version: '3'
+services:
+    mongodb:
+      image: mongo
+      container_name: mongodb
+      volumes:
+        - mongodb:/data/db
+      networks:
+          - backend-app
+      ports:
+        - 27017:27017
+
+    backend:
+      build: ./backend
+      container_name: backend
+      networks:
+        - backend-app
+        - frontend-app
+      ports:
+        - 3000:3000
+      links:
+        - mongodb
+
+
+    frontend:
+      build: ./frontend
+      container_name: frontend
+      networks:
+        - frontend-app
+      ports:
+        - 8080:8080
+      links:
+        - backend
+
+networks:
+  frontend-app:
+  backend-app:
+
+volumes:
+  mongodb:
